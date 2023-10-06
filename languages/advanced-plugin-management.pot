@@ -1,0 +1,142 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Plugin Management for Multisite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-06 05:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.3.1\n"
+"X-Domain: advanced-plugin-management"
+
+#: src/class-plugin-management-wp-list-table.php:103
+msgid "Activate on selected sites"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:222
+msgid "Activated"
+msgstr ""
+
+#. Name of the plugin
+msgid "Advanced Plugin Management for Multisite"
+msgstr ""
+
+#: src/visibility-submenu-page.php:66
+msgid "Could not find plugin"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:104
+msgid "Deactivate on selected sites"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:220
+msgid "Deactivated"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:164
+msgid "Hidden"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:180
+msgid "Hide"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:100
+msgid "Hide for selected sites"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/lauratheq/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/lauratheq/advanced-plugin-management"
+msgstr ""
+
+#. Author of the plugin
+msgid "Laura Herzog"
+msgstr ""
+
+#: src/visibility-submenu-page.php:24 src/visibility-submenu-page.php:25
+#: src/visibility-submenu-page.php:160 src/add-link-to-rowactions.php:41
+#: src/add-link-to-rowactions.php:43
+msgid "Manage Plugin"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:64
+msgid "No Sites found"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:139
+msgid "Open site plugins"
+msgstr ""
+
+#: src/visibility-submenu-page.php:95
+msgid "Plugin activated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:103
+msgid "Plugin deactivated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:169
+msgid "Plugin Information"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:254
+msgid "Plugin is network activated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:79 src/visibility-submenu-page.php:87
+msgid "Plugin visibility updated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:140
+msgid "Plugins activated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:150
+msgid "Plugins deactivated"
+msgstr ""
+
+#: src/visibility-submenu-page.php:120
+msgid "Plugins hidden"
+msgstr ""
+
+#: src/visibility-submenu-page.php:130
+msgid "Plugins unhidden"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:51
+msgid "Site"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:76
+msgid "Status"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"This plugin helps managing WordPress plugins accross a multisite network. It "
+"provides advanced visibility options and provides the possibility to force "
+"de-/activation."
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:189
+msgid "Unhide"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:101
+msgid "Unhide for selected sites"
+msgstr ""
+
+#: src/class-plugin-management-wp-list-table.php:77
+msgid "Visibility"
+msgstr ""

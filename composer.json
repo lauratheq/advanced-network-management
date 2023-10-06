@@ -1,0 +1,17 @@
+{
+	"name": "lauratheq/apmfm",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.0"
+	},
+	"scripts": {
+		"cs": "vendor/bin/phpcs --ignore=vendor/* --standard=WordPress .",
+		"build": "bin/build-wporg-package.sh"
+	}
+}
