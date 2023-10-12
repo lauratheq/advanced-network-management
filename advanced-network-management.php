@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Network Management for Multisite
  * Plugin URI:  https://github.com/lauratheq/advanced-network-management
  * Description: This plugin helps managing WordPress plugins accross a multisite network. It provides advanced visibility options and provides the possibility to force de-/activation.
- * Version:     0.1 beta
+ * Version:     0.1
  * Author:      Laura Herzog
  * Author URI:  https://github.com/lauratheq/
  * Text Domain: advanced-network-management
