@@ -1,13 +1,14 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Plugin Management for Multisite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 06:10+0000\n"
-"PO-Revision-Date: 2023-10-06 05:34+0000\n"
-"Last-Translator: \n"
-"Language-Team: German\n"
-"Language: de_DE\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"POT-Creation-Date: 2023-10-12 07:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,46 +18,46 @@ msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:103
 msgid "Activate on selected sites"
-msgstr "Aktiviere auf ausgewählten Seiten"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:222
 msgid "Activated"
-msgstr "Aktiviert"
+msgstr ""
 
 #. Name of the plugin
-msgid "Advanced Plugin Management for Multisite"
+msgid "Advanced Network Management for Multisite"
 msgstr ""
 
 #: src/visibility-submenu-page.php:66
 msgid "Could not find plugin"
-msgstr "Konnte Plugin nicht finden"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:104
 msgid "Deactivate on selected sites"
-msgstr "Deaktiviere auf ausgewählten Seiten"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:220
 msgid "Deactivated"
-msgstr "Deaktiviert"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:164
 msgid "Hidden"
-msgstr "Versteckt"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:180
 msgid "Hide"
-msgstr "Verstecken"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:100
 msgid "Hide for selected sites"
-msgstr "Für ausgewählte Seiten verstecken"
+msgstr ""
 
 #. Author URI of the plugin
 msgid "https://github.com/lauratheq/"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://github.com/lauratheq/advanced-plugin-management"
+msgid "https://github.com/lauratheq/advanced-network-management"
 msgstr ""
 
 #. Author of the plugin
@@ -67,59 +68,59 @@ msgstr ""
 #: src/visibility-submenu-page.php:160 src/add-link-to-rowactions.php:41
 #: src/add-link-to-rowactions.php:43
 msgid "Manage Plugin"
-msgstr "Plugin verwalten"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:64
 msgid "No Sites found"
-msgstr "Keine Websites gefunden"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:139
 msgid "Open site plugins"
-msgstr "Öffne Seiten-Plugins"
+msgstr ""
 
 #: src/visibility-submenu-page.php:95
 msgid "Plugin activated"
-msgstr "Plugin aktiviert"
+msgstr ""
 
 #: src/visibility-submenu-page.php:103
 msgid "Plugin deactivated"
-msgstr "Plugin deaktiviert"
+msgstr ""
 
 #: src/visibility-submenu-page.php:169
 msgid "Plugin Information"
-msgstr "Plugin Information"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:254
 msgid "Plugin is network activated"
-msgstr "Plugin ist netzwerkweit aktiv"
+msgstr ""
 
 #: src/visibility-submenu-page.php:79 src/visibility-submenu-page.php:87
 msgid "Plugin visibility updated"
-msgstr "Pluginsichtbarkeit aktualisiert"
+msgstr ""
 
 #: src/visibility-submenu-page.php:140
 msgid "Plugins activated"
-msgstr "Plugins aktiviert"
+msgstr ""
 
 #: src/visibility-submenu-page.php:150
 msgid "Plugins deactivated"
-msgstr "Plugins deaktiviert"
+msgstr ""
 
 #: src/visibility-submenu-page.php:120
 msgid "Plugins hidden"
-msgstr "Plugins versteckt"
+msgstr ""
 
 #: src/visibility-submenu-page.php:130
 msgid "Plugins unhidden"
-msgstr "Plugins sichtbar gemacht"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:51
 msgid "Site"
-msgstr "Website"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:76
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 #. Description of the plugin
 msgid ""
@@ -127,18 +128,15 @@ msgid ""
 "provides advanced visibility options and provides the possibility to force "
 "de-/activation."
 msgstr ""
-"Dieses Plugin hilft WordPress Plugins zu in einer Mutlisite zu verwalten. Es "
-"bietet erweiterte Sichtbarkeitseinstellungen und die Möglichkeit Plugins für "
-"bestimmte Websites zu aktivieren bzw. zu deaktivieren."
 
 #: src/class-plugin-management-wp-list-table.php:189
 msgid "Unhide"
-msgstr "Einblenden"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:101
 msgid "Unhide for selected sites"
-msgstr "Für ausgewählte Seiten einblenden"
+msgstr ""
 
 #: src/class-plugin-management-wp-list-table.php:77
 msgid "Visibility"
-msgstr "Sichtbarkeit"
+msgstr ""

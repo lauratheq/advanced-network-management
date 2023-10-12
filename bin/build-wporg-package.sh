@@ -3,9 +3,9 @@
 # cleanup
 rm -rf dist
 
-# copy plugin
+# copy m
 mkdir dist
-cp advanced-plugin-management.php dist
+cp advanced-network-management.php dist
 cp -r src dist
 cp -r languages dist
 

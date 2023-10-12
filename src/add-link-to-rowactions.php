@@ -15,10 +15,10 @@
  *
  * @return array
  */
-function apmfm_network_admin_plugin_action_links( $actions, $plugin_file ) {
+function anmfm_network_admin_plugin_action_links( $actions, $plugin_file ) {
 
 	// remove our plugin.
-	if ( APMFM_PLUGIN_BASENAME === $plugin_file ) {
+	if ( ANMFM_PLUGIN_BASENAME === $plugin_file ) {
 		return $actions;
 	}
 
@@ -38,9 +38,9 @@ function apmfm_network_admin_plugin_action_links( $actions, $plugin_file ) {
 	if ( isset( $actions['delete'] ) ) {
 		$delete_action = $actions['delete'];
 		unset( $actions['delete'] );
-		$actions['visibility'] = '<span class="edit"><a href="' . $edit_link . '">' . __( 'Manage Plugin', 'advanced-plugin-management' ) . '</a></span>';
+		$actions['visibility'] = '<span class="edit"><a href="' . $edit_link . '">' . __( 'Manage Plugin', 'advanced-network-management' ) . '</a></span>';
 	}
-	$actions['visibility'] = '<span class="edit"><a href="' . $edit_link . '">' . __( 'Manage Plugin', 'advanced-plugin-management' ) . '</a></span>';
+	$actions['visibility'] = '<span class="edit"><a href="' . $edit_link . '">' . __( 'Manage Plugin', 'advanced-network-management' ) . '</a></span>';
 	if ( isset( $delete_action ) ) {
 		$actions['delete'] = $delete_action;
 	}

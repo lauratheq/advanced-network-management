@@ -12,7 +12,7 @@
  *
  * @return  void
  */
-function apmfm_load_plugin_textdomain() {
+function anmfm_load_plugin_textdomain() {
 
-	load_plugin_textdomain( 'advanced-plugin-management', false, dirname( APMFM_PLUGIN_BASENAME ) . '/languages' );
+	load_plugin_textdomain( 'advanced-network-management', false, dirname( ANMFM_PLUGIN_BASENAME ) . '/languages' );
 }

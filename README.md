@@ -1,4 +1,4 @@
-# Advanced Plugin Management
+# Advanced Network Management
 
 This plugin helps managing WordPress plugins accross a multisite network. It provides advanced visibility options and provides the possibility to force de-/activation.
 
@@ -8,7 +8,7 @@ This plugin helps managing WordPress plugins accross a multisite network. It pro
 ## Installation
 
 1. Ensure you have a working multisite
-1. Clone this repository to `wp-content/plugins/advanced-plugin-management`
+1. Clone this repository to `wp-content/plugins/advanced-network-management`
 1. Head to Network Admin > Plugins
 1. Network activate the Plugin "Advanced Plugin Management for Multisite"
 

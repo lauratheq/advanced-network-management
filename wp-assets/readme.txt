@@ -1,4 +1,4 @@
-=== Advanced Plugin Management for Multisite ===
+=== Advanced Network Management for Multisite ===
 Contributors: lauraquellmalz
 Tags: plugins, management, multisite
 Requires at least: 6.3.1

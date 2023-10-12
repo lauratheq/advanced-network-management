@@ -15,7 +15,7 @@
  *
  * @return  array $plugins the modified list
  */
-function apmfm_remove_from_plugin_list( $plugins ) {
+function anmfm_remove_from_plugin_list( $plugins ) {
 
 	// Don't change anything in the network admin area.
 	if ( is_network_admin() ) {
@@ -23,19 +23,19 @@ function apmfm_remove_from_plugin_list( $plugins ) {
 	}
 
 	// remove our plugin from the list.
-	unset( $plugins['all'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['search'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['active'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['inactive'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['recently_activated'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['upgrade'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['mustuse'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['dropins'][ APMFM_PLUGIN_BASENAME ] );
-	unset( $plugins['paused'][ APMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['all'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['search'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['active'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['inactive'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['recently_activated'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['upgrade'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['mustuse'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['dropins'][ ANMFM_PLUGIN_BASENAME ] );
+	unset( $plugins['paused'][ ANMFM_PLUGIN_BASENAME ] );
 
 	// get the hidden plugins for this blog.
 	$blog_id          = get_current_blog_id();
-	$plugin_visiblity = get_site_option( 'apmfm_visibility_settings', array() );
+	$plugin_visiblity = get_site_option( 'anmfm_visibility_settings', array() );
 	if ( isset( $plugin_visiblity[ $blog_id ] ) ) {
 		foreach ( $plugin_visiblity[ $blog_id ] as $plugin ) {
 			unset( $plugins['all'][ $plugin ] );

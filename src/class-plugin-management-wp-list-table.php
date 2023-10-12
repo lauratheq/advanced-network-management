@@ -36,19 +36,19 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 		// check the nonce.
 		$nonce = isset( $_GET['_wpnonce'] ) ? sanitize_key( wp_unslash( $_GET['_wpnonce'] ) ) : false;
 		if ( ! $nonce || ! wp_verify_nonce( $nonce, 'manage-plugins' ) ) {
-			wp_die( 'Something went wront', 'advanced-plugin-management' );
+			wp_die( 'Something went wront', 'advanced-network-management' );
 		}
 
 		// check for the plugins basename.
 		if ( isset( $_GET['plugin'] ) ) {
 			$this->plugin_basename = isset( $_GET['plugin'] ) ? wp_unslash( $_GET['plugin'] ) : false; // phpcs:ignore
 		} else {
-			wp_die( 'Something went wront', 'advanced-plugin-management' );
+			wp_die( 'Something went wront', 'advanced-network-management' );
 		}
 
 		parent::__construct(
 			array(
-				'singular' => __( 'Site', 'advanced-plugin-management' ),
+				'singular' => __( 'Site', 'advanced-network-management' ),
 				'plural'   => __( 'Sites' ),
 				'ajax'     => false,
 			)
@@ -61,7 +61,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 	 * @return void
 	 */
 	public function no_items() {
-		esc_attr_e( 'No Sites found', 'advanced-plugin-management' );
+		esc_attr_e( 'No Sites found', 'advanced-network-management' );
 	}
 
 	/**
@@ -73,8 +73,8 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 		$columns = array(
 			'cb'         => '<input type="checkbox" />',
 			'sites'      => __( 'Sites' ),
-			'status'     => __( 'Status', 'advanced-plugin-management' ),
-			'visibility' => __( 'Visibility', 'advanced-plugin-management' ),
+			'status'     => __( 'Status', 'advanced-network-management' ),
+			'visibility' => __( 'Visibility', 'advanced-network-management' ),
 		);
 
 		return $columns;
@@ -97,11 +97,11 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 		<div class="alignleft actions bulkactions">
 			<select name="bulk-action" id="bulk-action">
 				<option value="-1"><?php esc_attr_e( 'Bulk actions' ); ?></option>
-				<option value="hide-for-all-selected"><?php esc_attr_e( 'Hide for selected sites', 'advanced-plugin-management' ); ?></option>
-				<option value="unhide-for-all-selected"><?php esc_attr_e( 'Unhide for selected sites', 'advanced-plugin-management' ); ?></option>
+				<option value="hide-for-all-selected"><?php esc_attr_e( 'Hide for selected sites', 'advanced-network-management' ); ?></option>
+				<option value="unhide-for-all-selected"><?php esc_attr_e( 'Unhide for selected sites', 'advanced-network-management' ); ?></option>
 				<?php if ( ! is_plugin_active_for_network( $this->plugin_basename ) ) { ?>
-					<option value="activate-on-all-selected"><?php esc_attr_e( 'Activate on selected sites', 'advanced-plugin-management' ); ?></option>
-					<option value="deactivate-on-all-selected"><?php esc_attr_e( 'Deactivate on selected sites', 'advanced-plugin-management' ); ?></option>
+					<option value="activate-on-all-selected"><?php esc_attr_e( 'Activate on selected sites', 'advanced-network-management' ); ?></option>
+					<option value="deactivate-on-all-selected"><?php esc_attr_e( 'Deactivate on selected sites', 'advanced-network-management' ); ?></option>
 				<?php } ?>
 			</select>
 			<input type="submit" id="doaction" class="button action" value="Apply">
@@ -136,7 +136,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 		restore_current_blog();
 
 		$html  = '<strong>' . $site_name . '</strong>';
-		$html .= '<div class="row-actions visible"><span class="edit"><a href="' . $edit_link . '">' . __( 'Open site plugins', 'advanced-plugin-management' ) . '</a></span></div>';
+		$html .= '<div class="row-actions visible"><span class="edit"><a href="' . $edit_link . '">' . __( 'Open site plugins', 'advanced-network-management' ) . '</a></span></div>';
 
 		return $html;
 	}
@@ -161,14 +161,14 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 			$base_edit_link
 		);
 
-		$visibility        = __( 'Hidden', 'advanced-plugin-management' );
-		$visibility_status = apmfm_get_plugin_visibility( $site->blog_id, $this->plugin_basename );
+		$visibility        = __( 'Hidden', 'advanced-network-management' );
+		$visibility_status = anmfm_get_plugin_visibility( $site->blog_id, $this->plugin_basename );
 		if ( $visibility_status ) {
 			$visibility = __( 'Visible' );
 		}
 
 		// change visibility.
-		$visibility_status = apmfm_get_plugin_visibility( $site->blog_id, $this->plugin_basename );
+		$visibility_status = anmfm_get_plugin_visibility( $site->blog_id, $this->plugin_basename );
 		if ( $visibility_status ) {
 			$visibility_link = add_query_arg(
 				array(
@@ -177,7 +177,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 				$base_edit_link
 			);
 			$visibility_link = wp_nonce_url( $visibility_link, 'manage-plugins' );
-			$visibility_link = '<a href="' . $visibility_link . '">' . __( 'Hide', 'advanced-plugin-management' ) . '</a>';
+			$visibility_link = '<a href="' . $visibility_link . '">' . __( 'Hide', 'advanced-network-management' ) . '</a>';
 		} else {
 			$visibility_link = add_query_arg(
 				array(
@@ -186,7 +186,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 				$base_edit_link
 			);
 			$visibility_link = wp_nonce_url( $visibility_link, 'manage-plugins' );
-			$visibility_link = '<a href="' . $visibility_link . '">' . __( 'Unhide', 'advanced-plugin-management' ) . '</a>';
+			$visibility_link = '<a href="' . $visibility_link . '">' . __( 'Unhide', 'advanced-network-management' ) . '</a>';
 		}
 
 		$html  = '<p>' . $visibility . '</p>';
@@ -217,9 +217,9 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 
 		switch_to_blog( $site->blog_id );
 		$is_plugin_active = is_plugin_active( $this->plugin_basename );
-		$status           = __( 'Deactivated', 'advanced-plugin-management' );
+		$status           = __( 'Deactivated', 'advanced-network-management' );
 		if ( $is_plugin_active ) {
-			$status = __( 'Activated', 'advanced-plugin-management' );
+			$status = __( 'Activated', 'advanced-network-management' );
 		}
 		restore_current_blog();
 
@@ -251,7 +251,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 			$html  = '<p>' . $status . '</p>';
 			$html .= '<p>' . $activation_link . '</p>';
 		} else {
-			$html = __( 'Plugin is network activated', 'advanced-plugin-management' );
+			$html = __( 'Plugin is network activated', 'advanced-network-management' );
 		}
 
 		return $html;

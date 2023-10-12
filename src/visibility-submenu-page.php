@@ -17,15 +17,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return  void
  */
-function apmfm_add_visibility_submenu() {
+function anmfm_add_visibility_submenu() {
 
 	add_submenu_page(
 		'plugins.php',
-		__( 'Manage Plugin', 'advanced-plugin-management' ),
-		__( 'Manage Plugin', 'advanced-plugin-management' ),
+		__( 'Manage Plugin', 'advanced-network-management' ),
+		__( 'Manage Plugin', 'advanced-network-management' ),
 		'manage_network',
 		'plugin-visibility',
-		'apmfm_visibility_overview'
+		'anmfm_visibility_overview'
 	);
 }
 
@@ -37,33 +37,33 @@ function apmfm_add_visibility_submenu() {
  *
  * @return  void
  */
-function apmfm_remove_submenu_page() {
+function anmfm_remove_submenu_page() {
 	remove_submenu_page( 'plugins.php', 'plugin-visibility' );
 }
 
 /**
  * Displays the plugin overview for the visibility
  *
- * @called-by   apmfm_add_visibility_submenu
+ * @called-by   anmfm_add_visibility_submenu
  *
  * @return    void
  */
-function apmfm_visibility_overview() {
+function anmfm_visibility_overview() {
 	$plugins = get_plugins();
 	$nonce   = isset( $_GET['_wpnonce'] ) ? sanitize_key( wp_unslash( $_GET['_wpnonce'] ) ) : false;
 	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'manage-plugins' ) ) {
-		wp_die( 'Something went wront', 'advanced-plugin-management' );
+		wp_die( 'Something went wront', 'advanced-network-management' );
 	}
 	$plugin  = isset( $_GET['plugin'] ) ? wp_unslash( $_GET['plugin'] ) : false; // phpcs:ignore
 	$action  = isset( $_GET['action'] ) ? sanitize_key( wp_unslash( $_GET['action'] ) ) : false;
 	$blog_id = isset( $_GET['blog_id'] ) ? sanitize_key( wp_unslash( $_GET['blog_id'] ) ) : false;
-	unset( $plugins[ APMFM_PLUGIN_BASENAME ] );
+	unset( $plugins[ ANMFM_PLUGIN_BASENAME ] );
 
 	// check if queried plugin exists.
 	if ( ! $plugin || ! isset( $plugins[ $plugin ] ) ) {
 		?>
 		<div class="error">
-			<p><?php esc_html_e( 'Could not find plugin', 'advanced-plugin-management' ); ?></p>
+			<p><?php esc_html_e( 'Could not find plugin', 'advanced-network-management' ); ?></p>
 		</div>
 		<?php
 		return;
@@ -73,34 +73,34 @@ function apmfm_visibility_overview() {
 	if ( $action ) {
 		switch ( $action ) {
 			case 'hide-plugin':
-				apmfm_hide_plugin( $blog_id, $plugin );
+				anmfm_hide_plugin( $blog_id, $plugin );
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugin visibility updated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugin visibility updated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'unhide-plugin':
-				apmfm_unhide_plugin( $blog_id, $plugin );
+				anmfm_unhide_plugin( $blog_id, $plugin );
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugin visibility updated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugin visibility updated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'activate-plugin':
-				apmfm_activate_plugin( $blog_id, $plugin );
+				anmfm_activate_plugin( $blog_id, $plugin );
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugin activated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugin activated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'deactivate-plugin':
-				apmfm_deactivate_plugin( $blog_id, $plugin );
+				anmfm_deactivate_plugin( $blog_id, $plugin );
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugin deactivated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugin deactivated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
@@ -113,41 +113,41 @@ function apmfm_visibility_overview() {
 		switch ( $_POST['bulk-action'] ) {
 			case 'hide-for-all-selected':
 				foreach ( $blog_ids as $blog_id ) {
-					apmfm_hide_plugin( $blog_id, $plugin );
+					anmfm_hide_plugin( $blog_id, $plugin );
 				}
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugins hidden', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugins hidden', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'unhide-for-all-selected':
 				foreach ( $blog_ids as $blog_id ) {
-					apmfm_unhide_plugin( $blog_id, $plugin );
+					anmfm_unhide_plugin( $blog_id, $plugin );
 				}
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugins unhidden', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugins unhidden', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'activate-on-all-selected':
 				foreach ( $blog_ids as $blog_id ) {
-					apmfm_activate_plugin( $blog_id, $plugin );
+					anmfm_activate_plugin( $blog_id, $plugin );
 				}
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugins activated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugins activated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
 			case 'deactivate-on-all-selected':
 				foreach ( $blog_ids as $blog_id ) {
-					apmfm_deactivate_plugin( $blog_id, $plugin );
+					anmfm_deactivate_plugin( $blog_id, $plugin );
 				}
 				?>
 				<div class="updated">
-					<p><?php esc_html_e( 'Plugins deactivated', 'advanced-plugin-management' ); ?></p>
+					<p><?php esc_html_e( 'Plugins deactivated', 'advanced-network-management' ); ?></p>
 				</div>
 				<?php
 				break;
@@ -157,7 +157,7 @@ function apmfm_visibility_overview() {
 	$plugin = $plugins[ $plugin ];
 	?>
 	<div id="poststuff" class="wrap">
-		<h1><?php esc_html_e( 'Manage Plugin', 'advanced-plugin-management' ); ?>: <?php echo esc_html( $plugin['Name'] ); ?></h1>
+		<h1><?php esc_html_e( 'Manage Plugin', 'advanced-network-management' ); ?>: <?php echo esc_html( $plugin['Name'] ); ?></h1>
 
 		<div id="post-body" class="metabox-holder columns-2">
 			<div class="metabox-holder columns-2">
@@ -166,7 +166,7 @@ function apmfm_visibility_overview() {
 					<div class="tablenav">&nbsp;</div>
 					<div class="postbox">
 						<div class="postbox-header">
-							<h2><?php esc_html_e( 'Plugin Information', 'advanced-plugin-management' ); ?></h2>
+							<h2><?php esc_html_e( 'Plugin Information', 'advanced-network-management' ); ?></h2>
 						</div>
 						<div class="inside">
 							<p><?php echo esc_html( $plugin['Description'] ); ?></p>
