@@ -2,8 +2,13 @@
 /**
  * Some helpers
  *
- * @package apmfm
+ * @package anmfm
  */
+
+// check if WordPress is loaded.
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
 
 /**
  * Fetches the plugin visibility

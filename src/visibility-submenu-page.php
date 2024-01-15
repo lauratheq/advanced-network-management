@@ -2,7 +2,7 @@
 /**
  * Registering the submenu page
  *
- * @package apmfm
+ * @package anmfm
  */
 
 // check if WordPress is loaded.
@@ -54,7 +54,7 @@ function anmfm_visibility_overview() {
 	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'manage-plugins' ) ) {
 		wp_die( 'Something went wront', 'advanced-network-management' );
 	}
-	$plugin  = isset( $_GET['plugin'] ) ? wp_unslash( $_GET['plugin'] ) : false; // phpcs:ignore
+	$plugin  = isset( $_GET['plugin'] ) ? wp_kses_post( wp_unslash( $_GET['plugin'] ) ) : false;
 	$action  = isset( $_GET['action'] ) ? sanitize_key( wp_unslash( $_GET['action'] ) ) : false;
 	$blog_id = isset( $_GET['blog_id'] ) ? sanitize_key( wp_unslash( $_GET['blog_id'] ) ) : false;
 	unset( $plugins[ ANMFM_PLUGIN_BASENAME ] );
@@ -108,8 +108,9 @@ function anmfm_visibility_overview() {
 	}
 
 	// check bulk actions.
-	if ( isset( $_POST['apmfm-bulk-edit'] ) && isset( $_POST['bulk-action'] ) && ! empty( $_POST['blog_ids'] ) ) {
-		$blog_ids = wp_unslash( $_POST['blog_ids'] ); // phpcs:ignore
+	if ( isset( $_POST['anmfm-bulk-edit'] ) && isset( $_POST['bulk-action'] ) && ! empty( $_POST['blog_ids'] ) ) {
+		$blog_ids = array_values( array_map( 'sanitize_text_field', wp_unslash( $_POST['blog_ids'] ) ) );
+
 		switch ( $_POST['bulk-action'] ) {
 			case 'hide-for-all-selected':
 				foreach ( $blog_ids as $blog_id ) {
@@ -179,10 +180,10 @@ function anmfm_visibility_overview() {
 				</div>
 
 				<div id="postbox-container-2" class="postbox-container">
-					<form id="apmfm-plugin-management-form" method="post">
-						<input type="hidden" name="apmfm-bulk-edit" value="true"/>
+					<form id="anmfm-plugin-management-form" method="post">
+						<input type="hidden" name="anmfm-bulk-edit" value="true"/>
 						<?php
-						$list_table = new Plugin_Management_WP_List_Table();
+						$list_table = new ANMFM_Plugin_Management_WP_List_Table();
 						$list_table->prepare_items();
 						$list_table->display();
 						?>

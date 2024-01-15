@@ -2,8 +2,13 @@
 /**
  * Adds the rowactions
  *
- * @package apmfm
+ * @package anmfm
  */
+
+// check if WordPress is loaded.
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
 
 /**
  * Adds the rowaction to the plugin overview

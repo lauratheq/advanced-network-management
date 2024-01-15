@@ -12,7 +12,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  * Network:     true
  *
- * @package     apmfm
+ * @package     anmfm
  */
 
 // check if WordPress is loaded.
@@ -60,9 +60,8 @@ function anmfm_init() {
 	add_action( 'network_admin_plugin_action_links', 'anmfm_network_admin_plugin_action_links', 10, 2 );
 
 	// adding the submenu page.
-	require_once __DIR__ . '/src/class-plugin-management-wp-list-table.php';
+	require_once __DIR__ . '/src/class-anmfm-plugin-management-wp-list-table.php';
 	require_once __DIR__ . '/src/visibility-submenu-page.php';
 	add_action( 'network_admin_menu', 'anmfm_add_visibility_submenu' );
 	add_action( 'admin_head', 'anmfm_remove_submenu_page' );
 } add_action( 'plugins_loaded', 'anmfm_init' );
-

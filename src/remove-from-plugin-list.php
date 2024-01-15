@@ -2,8 +2,13 @@
 /**
  * Removes plugin from the plugin list
  *
- * @package apmfm
+ * @package anmfm
  */
+
+// check if WordPress is loaded.
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
 
 /**
  * Removes plugins from the plugin list in the non

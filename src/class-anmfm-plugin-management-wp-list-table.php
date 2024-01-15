@@ -2,7 +2,7 @@
 /**
  * Plugin management list
  *
- * @package apmfm
+ * @package anmfm
  */
 
 // check if WordPress is loaded.
@@ -18,7 +18,7 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 /**
  * List table class
  */
-class Plugin_Management_WP_List_Table extends \WP_List_Table {
+class ANMFM_Plugin_Management_WP_List_Table extends \WP_List_Table {
 	/**
 	 * The plugins basename
 	 *
@@ -41,7 +41,7 @@ class Plugin_Management_WP_List_Table extends \WP_List_Table {
 
 		// check for the plugins basename.
 		if ( isset( $_GET['plugin'] ) ) {
-			$this->plugin_basename = isset( $_GET['plugin'] ) ? wp_unslash( $_GET['plugin'] ) : false; // phpcs:ignore
+			$this->plugin_basename = isset( $_GET['plugin'] ) ? wp_kses_post( wp_unslash( $_GET['plugin'] ) ) : false;
 		} else {
 			wp_die( 'Something went wront', 'advanced-network-management' );
 		}

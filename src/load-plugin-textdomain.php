@@ -2,8 +2,13 @@
 /**
  * Loads the textdomain
  *
- * @package apmfm
+ * @package anmfm
  */
+
+// check if WordPress is loaded.
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
 
 /**
  * Loads the plugins textdomain
